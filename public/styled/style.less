@@ -1,0 +1,565 @@
+/*
+Archy is a Sifu (師傅) in CSS (層疊樣式表). 
+He's been doing it since the age of 13.
+*/
+@font-face {
+    font-family: 'Dilem Handwritten';
+    src: url('/topography/dilem-webfont.eot');
+    src: url('/topography/dilem-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/topography/dilem-webfont.woff2') format('woff2'),
+         url('/topography/dilem-webfont.woff') format('woff'),
+         url('/topography/dilem-webfont.ttf') format('truetype'),
+         url('/topography/dilem-webfont.svg#dilemhandwrittenmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+/* Archy animating himself! Such animating. Much indepdent. Very CSS-framework-phobic. Oh. */
+.animationScaleUp {
+	to { -webkit-transform: scale(1); 
+		-moz-transform: scale(1);
+		transform: scale(1);
+		opacity: 1; 
+	} 
+}
+@-ms-keyframes scaleUp{.animationScaleUp}
+@-webkit-keyframes scaleUp {.animationScaleUp}
+@-moz-keyframes scaleUp {.animationScaleUp}
+@keyframes scaleUp {.animationScaleUp}
+
+.tobeScaledUp{
+	-ms-transform: scale(0.9);
+	-webkit-transform: scale(0.9);
+	-moz-transform: scale(0.9);
+	transform: scale(0.9);
+	opacity: 0;
+}
+.ScaledUp{
+	-ms-animation: scaleUp 0.4s ease forwards;
+	-webkit-animation: scaleUp 0.4s ease forwards;
+	-moz-animation: scaleUp 0.4s ease forwards;
+	animation: scaleUp 0.4s ease forwards;
+}
+.animationSpringOut {
+  0%, 20%, 40%, 60%, 80%, 100% {
+  	-ms-transition-timing-function:  cubic-bezier(.34,.67,.88,.34);
+	-moz-transition-timing-function: cubic-bezier(.34,.67,.88,.34);
+    -webkit-transition-timing-function: cubic-bezier(.34,.67,.88,.34); //http://cubic-bezier.com/
+    transition-timing-function: cubic-bezier(.34,.67,.88,.34);
+  }
+
+  0% {
+    opacity: 0;
+    -ms-transform: scale3d(.3, .3, .3);
+    -moz-transform: scale3d(.3, .3, .3);
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+
+  20% {
+  	-ms-transform: scale3d(1, 1, 1);
+  	-moz-transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  40% {
+  	-ms-transform: scale3d(.9, .9, .9);
+    -moz-transform: scale3d(.9, .9, .9);
+    -webkit-transform: scale3d(.9, .9, .9);
+    transform: scale3d(.9, .9, .9);
+  }
+
+  60% {
+    opacity: 1;
+    -ms-transform: scale3d(1.05, 1.05, 1.05);
+    -moz-transform: scale3d(1.05, 1.05, 1.05);
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  80% {
+  	-ms-transform: scale3d(.985, .985, .985);
+  	-moz-transform:scale3d(.985, .985, .985);
+    -webkit-transform: scale3d(.985, .985, .985);
+    transform: scale3d(.985, .985, .985);
+  }
+
+  100% {
+    opacity: 1;
+    -ms-transform: scale3d(1, 1, 1);
+    -moz-transform: scale3d(1, 1, 1);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@-ms-keyframes scaleUp{.animationSpringOut}
+@-moz-keyframes scaleUp {.animationSpringOut}
+@-webkit-keyframes springOut {.animationSpringOut}
+@keyframes springOut {.animationSpringOut}
+.tobeSprangOut{
+	opacity: 0;
+}
+.SprangOut {
+	-ms-animation: springOut 0.4s ease forwards;
+	-webkit-animation: springOut 0.4s ease forwards;
+	-moz-animation: springOut 0.4s ease forwards;
+	animation: springOut 0.4s ease forwards;
+}
+/* Archy boostrapping himself! Such boostrapping. Much indepedent. Very CSS-framework-phobic. Oh. */
+*{
+	padding: 0;
+	margin:0;
+}
+body {
+  font: 14px Times;
+}
+a{
+	color:inherit;
+	text-decoration: none;
+	:hover{
+		text-decoration: none;
+		color:inherit;
+	}
+}
+.threeIn1{
+	width: 33.33333333%;
+	box-sizing: border-box;
+	float:left;
+}
+.over-hidden{
+	overflow: hidden;
+}
+h1,h2,h3{
+	text-align: center;
+	margin: 0 !important;
+	padding-bottom:40px;
+	font-weight: normal;
+}
+h2{
+	font-size: 23px;
+}
+h3{
+	font-size: 19px;
+	color:#404cff;
+	a{
+		border-bottom: 2px solid transparent;
+		-webkit-transition: 350ms border ease-out;
+		-moz-transition: 350ms border ease-out;
+		-o-transition: 350ms border ease-out;
+		transition: 350ms border ease-out;
+	}
+	a:hover{
+		border-bottom: 2px solid #404cff;
+	}
+}
+h4{
+	font-size: 18px;
+	border: 4px solid #fff;
+	display: table;
+	margin:0 auto;
+	
+	padding:20px
+}
+h1{
+	font-weight: 800;
+	font-size: 40px;
+}
+.wordsWordsWords{
+	font-family: "Montserrat";
+	padding:120px 0;
+}
+
+div,h1,h2,h3,h4{
+	position: relative;
+}
+.inline-block{
+	display: inline-block;
+	vertical-align: top;
+}
+.text-right{
+	text-align: right;
+}
+.margin-right-80{
+	margin-right: 80px
+}
+/* Archy styling himself! Such styling. Much indepedent. Very CSS-philic. Oh Ohohohoh. */
+.backgroundThatMoves{
+	width: 100%;
+	height: 4000px;
+	position: absolute;
+	top:0;
+	left:0;
+	background: url("http://static.squarespace.com/static/5134b5dee4b0c6fb04df399f/t/52991611e4b01a756858776d/1385764369922/hackidemia-banner-pattern.jpg");
+}
+
+.archyHeader{
+	padding: 40px 0;
+	color:#fff;
+	background-color: #fca918;
+	.background_that_fades{
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		background: #fb4051; /* Old browsers */
+		background: -moz-linear-gradient(left,  #ff6d69 0%, #fb4051 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, right top, color-stop(0%,#ff6d69), color-stop(100%,#fb4051)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(left,  #ff6d69 0%,#fb4051 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left,  #ff6d69 0%,#fb4051 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(left,  #ff6d69 0%,#fb4051 100%); /* IE10+ */
+		background: linear-gradient(to right,  #fb4051 0%,#f56b55 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6d69', endColorstr='#fb4051',GradientType=1 ); /* IE6-9 */
+	}
+	.archyHeadMid{
+		display: table;
+		margin:0 auto;
+		.robotHead{
+			text-align: center;
+			margin-top: 30px;
+		}
+		.quoteAtHead{
+			font-size: 22px;
+			font-family: Times;
+			padding: 40px 0;
+		}
+	}
+}
+
+.archyTop{
+	font-family: "Dilem Handwritten";
+	font-size: 24px;
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top:25px;
+	span{
+		margin-left: 28px;
+		img{
+			margin: 0 6px
+		}
+	}
+	.ab-right{
+		position: absolute;
+		right: 23px;
+		top:0;
+	}
+}
+
+
+.archySession{
+	font-family: "Open Sans";
+	font-weight: 200;
+	position: relative;
+	padding:70px 0;
+	.archySessionTitle{
+		position: relative;
+		margin:0 auto;
+		display: table;
+		font-size: 35px;
+		text-rendering: optimizeLegibility !important;
+		-webkit-font-smoothing: antialiased !important;
+		background-color: #fff;
+		padding:50px;
+		border-top: 20px solid #fb4252;
+		border-radius: 3px;
+		span{
+			vertical-align: middle;
+			line-height: 1em;
+			display:inline-block;
+			margin: 0 10px
+		}
+		.archyFooter{
+			padding-top:10px;
+			padding-bottom: 10px;
+			font-size: 15px;
+			font-family: 'Raleway', sans-serif;
+			line-height: 28px;
+			a{
+				color:#777
+			}
+		}
+	}
+	.archySessionLayer{
+		opacity: 0.2;
+		position: absolute;
+		top:0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.redStyle{
+	@bgc: #e41b00;
+	@bc: #fb4252;
+	@wc: #fb4252;
+	.archySessionTitle{
+		border-top-color:@bc;
+		color:@wc;
+	}
+	.archySessionLayer{
+		background-color: @bgc;
+	}
+}
+.redderStyle{
+	@bgc: #e41b00;
+	@bc: #ccc;
+	@wc: #333;
+	.archySessionTitle{
+		border-top-color:@bc;
+		color:@wc;
+	}
+	.archySessionLayer{
+		background-color: @bgc;
+	}
+}
+.yellowStyle{
+	@bgc: #f9bf0f;
+	@bc: #ffd03f;
+	@wc: #f79e11;
+		.archySessionTitle{
+		border-top-color:@bc;
+		color:@wc;
+	}
+	.archySessionLayer{
+		background-color: @bgc;
+	}
+}
+.orangeStyle{
+	@bgc: #d34202;
+	@bc: #fa9b4d;
+	@wc: #fb6522;
+		.archySessionTitle{
+		border-top-color:@bc;
+		color:@wc;
+	}
+	.archySessionLayer{
+		background-color: @bgc;
+	}
+}
+
+.archySessionWhite{
+	background-color: #fff;
+	color:#000;
+}
+.archySessionDark{
+	background-color: #211710
+}
+
+
+.archyEvents{
+	position: relative;
+	.event1{
+		background-color: #111;
+		.front{
+			background-color: #e4e4e4;
+		}
+		.date{
+			background-color: #f24126;
+		}
+		.back{
+			background-color: #FF5B40;
+		}
+	}
+	.event2{
+		background-color: #1f1f1f;
+		.front{
+			background-color: #f1f1f1;
+		}
+		.date{
+			background-color: #f96915
+		}
+		.back{
+			background-color: #FF832F;
+		}
+	}
+	.event3{
+		background-color: #2a2a2a;
+		.front{
+			background-color: #fff;
+		}
+		.date{
+			background-color: #FFCD02
+		}
+		.back{
+			background-color: #FFE71C
+		}
+	}
+	.archyEventWrapper{
+		position: relative;
+		padding-bottom: 80%;
+		@media (min-width: 768px){
+			padding-bottom: 120%;
+		}
+	}
+	.archyEvent{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		//width: 248px;
+		//height: 292px;
+		.date{
+			font-weight: 400;
+			color:#fff;
+			text-align: center;
+			font-family: 'Raleway', sans-serif;
+			padding: 20px 0;
+			.day{
+				font-size: 70px;
+			}
+			.month{
+				font-size: 34px;
+			}
+		}
+		.details,.front,.back{
+			width: 100%;
+			height: 100%;
+		}
+		.detailsContainer{
+			webkit-perspective: 1000;
+			-moz-perspective: 1000;
+			-ms-perspective: 1000;
+			perspective: 1000;
+			-ms-transform: perspective(1000px);
+			-moz-transform: perspective(1000px);
+			-moz-transform-style: preserve-3d;
+			-ms-transform-style: preserve-3d;
+			.details{
+				-webkit-transition: 0.6s;
+				-webkit-transform-style: preserve-3d;
+				-ms-transition: 0.6s;
+				-moz-transition: 0.6s;
+				-moz-transform: perspective(1000px);
+				-moz-transform-style: preserve-3d;
+				-ms-transform-style: preserve-3d;
+				transition: 0.6s;
+				transform-style: preserve-3d;
+				position: relative;
+				.front,.back{
+					-webkit-backface-visibility: hidden;
+					-moz-backface-visibility: hidden;
+					-ms-backface-visibility: hidden;
+					backface-visibility: hidden;
+					-webkit-transition: 0.6s;
+					-webkit-transform-style: preserve-3d;
+					-webkit-transform: rotateY(0deg);
+					-moz-transition: 0.6s;
+					-moz-transform-style: preserve-3d;
+					-moz-transform: rotateY(0deg);
+					-o-transition: 0.6s;
+					-o-transform-style: preserve-3d;
+					-o-transform: rotateY(0deg);
+					-ms-transition: 0.6s;
+					-ms-transform-style: preserve-3d;
+					-ms-transform: rotateY(0deg);
+					transition: 0.6s;
+					transform-style: preserve-3d;
+					transform: rotateY(0deg);
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+				.front {
+					-webkit-transform: rotateY(0deg);
+					-ms-transform: rotateY(0deg);
+					z-index: 2;
+				}
+				.back {
+					-webkit-transform: rotateY(-180deg);
+					-moz-transform: rotateY(-180deg);
+					-o-transform: rotateY(-180deg);
+					-ms-transform: rotateY(-180deg);
+					transform: rotateY(-180deg);
+				}
+			}
+		}
+		.detailsContainer:hover .details, .detailsContainer.hover .details {
+			transform: rotateY(180deg);
+		}
+	}
+}
+
+.people{
+	font-family: 'Raleway', sans-serif;
+	margin: 0 auto;
+	overflow: hidden;
+	.person{
+		float: left;
+		width: 300px;
+		vertical-align: top;
+		.imgWrap{
+			overflow: hidden;
+			width: 300px;
+			height: 300px;
+		}
+		img{
+			opacity: 0.8;
+			width: 100%;
+		}
+		.info{
+			padding:50px 0;
+			text-align: center;
+			font-size: 21px;
+			background-color:#f1f1f1;
+			position: relative;
+			.dividerR{
+				background-color: #ddd;
+				height: 100%;
+				width: 1px;
+				position: absolute;
+				right: 0;
+				top:0;
+			}
+			.dividerL{
+				background-color: #fff;
+				height: 100%;
+				width: 1px;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+		}
+	}
+}
+.joinTheTeam{
+	background-color: #ff8838;
+	color:#fff !important;
+	text-align: center;
+	.joinTheTeamButtonBackground{
+		position: absolute;
+		bottom: 0;
+		left:0;
+		height: 0%;
+		background-color: #fff;
+		width: 100%;
+	}
+	h4,.joinTheTeamButtonBackground{
+		-webkit-transition: all 150ms ease-in;
+		-moz-transition: all 150ms ease-in;
+		-ms-transition: all 150ms ease-in;
+		-o-transition: all 150ms ease-in;
+		transition: all 150ms ease-in;
+	}
+	h4:hover{
+		color:darken(#ff8838, 10%);
+	}
+	.joinTheTeamButton{
+		background-color: #fff;
+	}
+}
+
+.toScrollPassed{
+	position: fixed;
+	top:0;
+	left:0;
+	width: 120%;
+	display: none;
+	
+}
+#sessions{
+	overflow: scroll;
+}
