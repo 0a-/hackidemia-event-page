@@ -1,11 +1,14 @@
 $(function(){
-    var $body = $("body"),$window = $(window),bh = undefined, wh = $window.height(),
+    var $body = $("body"), $window = $(window);
+    var bh, wh, $window_loaded = false, 
     regions = [];
     function region(fn,px){
         this.fn = fn;
         this.entered = false;
         this.px = px;
-        this.enterSt = px-wh;
+    }
+    region.prototype.obtainEnterSt = function(){
+        this.enterSt = this.px - wh;
     }
     region.prototype.trigger = function(){
         if(!this.entered){
@@ -45,12 +48,12 @@ $(function(){
     }
     function init(){
         $(".detailsContainer").height($(".archyEvent").outerHeight()-$(".date").outerHeight());
-        $window.load(function(){
-            bh = $body.height();
-            //just in case the first $window.height is inaccurate
-            wh = $window.height();
-            $(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
-        });
+        bh = $body.height();
+        wh = $window.height();
+        for(key in regions){
+            regions[key].obtainEnterSt();
+        }
+        $(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
     }
     function domEffects(){
         $(".joinTheTeam h4").hover(function(){
@@ -76,17 +79,28 @@ $(function(){
             }
         }
     }
-    init();
     var domScrolledEffects = domEffects();
+    init(); //bh and wh here may not be accurate;
+    $window.load(function(){
+        $window_loaded = true;
+        $(".spinner").addClass("hidden");
+        $body.css("overflow","scroll");
+        setTimeout(function(){
+            $(".quoteAtHead").addClass("SprangOut");
+        },400);
+        init();
+    }).resize(init);
     $(document).on("scroll",function(){
         var st = $(document).scrollTop();
         $(".background_that_fades").css("opacity",1-0.8*(st/500));
         $(".backgroundThatMoves").css("margin-top",st*-0.3);
-        var passed = domScrolledEffects(st);
-        while(passed){
-            //case domScrolledEffects again just
-            //in case user scrolls way to fast.
-            passed =domScrolledEffects(st);
+        if($window_loaded){
+            var passed = domScrolledEffects(st);
+            while(passed){
+                //case domScrolledEffects again just
+                //in case user scrolls way to fast.
+                passed =domScrolledEffects(st);
+            }
         }
     });
 
