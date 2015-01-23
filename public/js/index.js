@@ -90,7 +90,7 @@ $(function(){
     $window.load(function(){
         $window_loaded = true;
         $(".spinner").addClass("hidden");
-        $body.css("overflow","scroll");
+        $("html,body").css("overflow","scroll");
         setTimeout(function(){
             $(".quoteAtHead").addClass("SprangOut");
         },400);
