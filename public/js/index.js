@@ -56,6 +56,13 @@ $(function(){
         $(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
     }
     function domEffects(){
+        $(".robotImage").load(function(){
+            $(this).addClass("ScaledUp");
+        }).each(function(){
+            if(this.complete){
+                $(this).trigger('load');
+            }
+        });
         $(".joinTheTeam h4").hover(function(){
             $(".joinTheTeamButtonBackground").css("height","100%");
         },function(){
@@ -80,7 +87,6 @@ $(function(){
         }
     }
     var domScrolledEffects = domEffects();
-    init(); //bh and wh here may not be accurate;
     $window.load(function(){
         $window_loaded = true;
         $(".spinner").addClass("hidden");
