@@ -56,6 +56,12 @@ $(function(){
         $(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
     }
     function domEffects(){
+        //disable any kind of body scroll before window.load.
+        $("body").on('touchmove mousewheel', function(e){
+          e.preventDefault();
+          e.stopPropagation();
+          return false;
+        });
         $(".robotImage").load(function(){
             $(this).addClass("ScaledUp");
         }).each(function(){
@@ -90,7 +96,7 @@ $(function(){
     $window.load(function(){
         $window_loaded = true;
         $(".spinner").addClass("hidden");
-        $("html,body").css("overflow","scroll");
+        $body.css("overflow","scroll").off('touchmove mousewheel');
         setTimeout(function(){
             $(".quoteAtHead").addClass("SprangOut");
         },400);
