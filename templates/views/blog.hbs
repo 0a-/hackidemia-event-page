@@ -1,0 +1,41 @@
+<div class="archyBlogHead">
+</div>
+<div class="archySession blueStyle">
+	<div class="archySessionLayer">
+	</div>
+	<div class="archySessionTitle tobeScaledUp ScaledUpAfterLoad">
+	<span> <img src="imaginary/ufo.png"> </span>
+	<span>Latest Blog posts </span>
+	</div>
+</div>
+<div class="archySessionWhite wordsWordsWords readMore">
+	<div class="spinner">
+	  <div class="rect1"></div>
+	  <div class="rect2"></div>
+	  <div class="rect3"></div>
+	  <div class="rect4"></div>
+	  <div class="rect5"></div>
+	</div>
+	<div class="constrant">
+	{{# each data.posts.results}}
+	<div class="{{#if @first}}tobeSprangOut SprangOutAfterLoad {{/if}}">
+	<h3 class="date">
+	{{{date}}}
+	</h3>
+	<h1>
+	{{{title}}}
+	</h1>
+	<h2>
+	{{{content.brief}}}
+	</h2>
+	<h4>
+	<div class="readMoreButtonBackground">
+	</div>
+	<div>
+	<a href="{{postUrl slug}}">read more</a>
+	</div>
+	</h4>
+	</div>
+	{{/each}}
+	</div>
+</div>
