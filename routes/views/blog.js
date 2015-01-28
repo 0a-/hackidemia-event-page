@@ -23,13 +23,11 @@ exports = module.exports = function(req, res) {
 			})
 			.where('state', 'published')
 			.sort('-publishedDate')
-			.populate('author');
-		
-		
-		q.exec(function(err, results) {
-			locals.data.posts = results;
-			next(err);
-		});
+			.populate('author')
+			.exec(function(err, results) {
+				locals.data.posts = results;
+				next(err);
+			});
 		
 	});
 	

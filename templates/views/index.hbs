@@ -33,11 +33,11 @@
 <div class="archySessionWhite tobeSprangOutGroup">
 	<div class="archyEvents">
 	<div class="over-hidden">
-	{{#make 3}}
+	{{# each data.events }}
 	<div class="threeIn1">
 		<div class="archyEventWrapper">
-		<div class="archyEvent event{{this}}">
-			<div class="date date{{this}}">
+		<div class="archyEvent event{{@index}}">
+			<div class="date date{{@index}}">
 			<div class="tobeSprangOut">
 			<div class="day">
 			20
@@ -47,9 +47,19 @@
 			</div>
 			</div>
 			</div>
-			<div class="detailsContainer {{#equal this 1 }}triggerSprangOutGroup{{/equal}}">
+			<div class="detailsContainer {{#if @first}} triggerSprangOutGroup {{/if}}">
 				<div class="details">
 				<div class="front">
+					<div class="shortDescriptionWrapper">
+					<div class="shortDescription">
+					<h1>
+					{{{front_description1}}}
+					</h1>
+					<h2>
+					{{{front_description2}}}
+					</h2>
+					</div>
+					</div>
 				</div>
 				<div class="back">
 				</div>
@@ -58,7 +68,7 @@
 		</div>
 		</div>
 	</div>
-	{{/make}}
+	{{/each}}
 	</div>
 	</div>
 </div>
