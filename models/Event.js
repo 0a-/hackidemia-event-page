@@ -18,8 +18,7 @@ Event.add({
     front_description2: { type: Types.Html, height: 300 },
     venue: {type: String},
     facebook_url : {type: String},
-    time: { type: Types.Datetime },
-    image: { type: Types.CloudinaryImage }
+    time: { type: Types.Datetime }
 });
 
 Event.schema.virtual('content.full').get(function() {

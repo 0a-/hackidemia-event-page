@@ -12,7 +12,7 @@ var keystone = require('keystone'),
 
 keystone.init({
 
-	'name': 'HacKIDemia SG',
+	'name': 'HacKIDemia '+process.env.country,
 	'brand': 'HacKIDemia',
 	'less': 'public',
 	'static': 'public',

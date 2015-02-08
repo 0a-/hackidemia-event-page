@@ -9,7 +9,7 @@
 
 exports.create = {
 	Admin: [
-		{ 'name.first': 'Admin', 'name.last': 'User', email: 'archy@0ar.ch', password: '299792458', isAdmin: true }
+		{ 'name.first': 'Admin', 'name.last': 'User', email: 'archy@0ar.ch', password: 'password', isAdmin: true }
 	]
 };
 
