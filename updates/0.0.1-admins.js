@@ -7,12 +7,16 @@
  * module.exports = function(done) { ... }
  */
 
-exports.create = {
-	Admin: [
-		{ 'name.first': 'Admin', 'name.last': 'User', email: 'archy@0ar.ch', password: 'password', isAdmin: true }
-	]
-};
 
+// exports.create = {
+// 	Admin: [
+// 		{ 'name.first': 'Default', 'name.last': 'User', email: 'archy@0ar.ch', password: 'ArchyIsAwesomelyCool', isAdmin: true }
+// 	]
+// };
+
+exports = module.exports = function(done) {
+	/* do nothing~ */
+}
 /*
 
 // This is the long-hand version of the functionality above:
