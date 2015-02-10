@@ -6,8 +6,8 @@ exports = module.exports = function(req, res) {
         if (!process.env.inited) {
             var fs = require('fs');
             //create .env
-            var string = "inited = true \n" + q.cloud_url + "\n";
-            string += "region =\"" + q.region + "\"\n facebook=\"" + q.fbPage + "\"\n subdomain=\"" + q.subDomain + "\"\n contactEmail=\"" + q.contact + "\"";
+            var string = "inited = true \n" + q.cloud + "\n";
+            string += "region =\"" + q.region + "\"\n fb=\"" + q.fb + "\"\n subdomain=\"" + q.subdomain + "\"\n contact=\"" + q.contact + "\"";
             fs.writeFile('.env', string, function(err) {
                 if (err) return console.log(err);
                 console.log(string + " > .env");
@@ -22,7 +22,6 @@ exports = module.exports = function(req, res) {
                 console.log("created db seed for admin");
             });
         }
-
     } else {
 
         var view = new keystone.View(req, res),
@@ -37,7 +36,7 @@ exports = module.exports = function(req, res) {
         };
 
         view.on('init', function(next) {
-
+    
             keystone.list("Event").model.find()
                 .where('state', 'published')
                 .sort('-time')
