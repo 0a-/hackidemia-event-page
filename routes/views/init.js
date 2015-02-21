@@ -13,11 +13,11 @@ exports = module.exports = function(req, res) {
                 console.log(string + " > .env");
             });
             //create data seed for admin
-            var dbseed = " var keystone = require('keystone'), User = keystone.list('User');";
-            dbseed += "var admin = { email: " + q.admin_email + ", password: " + q.admin_pass + ", name:{ first: " + q.admin_name + "}};";
-            dbseed += "var a = new User.model(admin); a.isAdmin = true; a.save(function(err){";
-            dbseed += "if (err){ return console.log(err) }else{ console.log('admin added'); }});";
-            fs.writeFile('data_seeding', dbseed, function(err) {
+            var dbseed = "module.exports =function(){ var keystone = require('keystone'), User = keystone.list('User');\n";
+            dbseed += "var admin = { email: \"" + q.admin_email + "\", password: \"" + q.admin_pass + "\", name:{ first: \"" + q.admin_name + "\"}};\n";
+            dbseed += "var a = new User.model(admin); a.isAdmin = true; a.save(function(err){\n";
+            dbseed += "if (err){ return console.log(err) }else{ console.log('admin added'); }});}\n";
+            fs.writeFile('data_seeding.js', dbseed, function(err) {
                 if (err) return console.log(err);
                 console.log("created db seed for admin");
             });

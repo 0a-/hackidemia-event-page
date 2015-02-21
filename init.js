@@ -29,7 +29,7 @@ keystone.init({
     'auto update': true,
     'session': true,
     'auth': true,
-    'user model': 'Admin',
+    'user model': 'User',
     'cookie secret': '(9&%;!KH7*@R7yO5LqG2/gW1LkGv/o~UJadkpZPU<i+PG-Mb$(|hwKimF"=!7PE9'
 
 });
@@ -43,6 +43,16 @@ keystone.set('locals', {
     editable: keystone.content.editable
 });
 
+if(process.env.inited){
+var User = keystone.list('User');
+User.model.findOne({},function(err,user){
+
+    if(!user){ 
+    require("./data_seeding.js")();
+    }
+ 
+});
+}
 
 keystone.set('routes', require('./routes'));
 keystone.start();

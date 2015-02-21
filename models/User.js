@@ -6,7 +6,7 @@ var keystone = require('keystone'),
  * ==========
  */
 
-var Admin = new keystone.List('Admin');
+var Admin = new keystone.List('User');
 
 Admin.add({
 	name: { type: Types.Name, required: true, index: true },
