@@ -2,9 +2,12 @@
 	<div class="background_that_fades">
 	</div>
 	<div class="archyHeadMid">
-	<div class="robotHead">
-	<img class="robotImage tobeScaledUp" src="imaginary/hackidemia.png">
-	</div>
+	    <div class="robotHead">
+    	<img class="robotImage tobeScaledUp" src="imaginary/hackidemia.png">
+           <div class="robotWordBelow tobeScaledUp">
+            {{getEnv 'region'}}
+        </div>	
+    </div>
 	<div>
 	<div class="spinner">
 	  <div class="rect1"></div>
@@ -40,10 +43,10 @@
 			<div class="date date{{@index}}">
 			<div class="tobeSprangOut">
 			<div class="day">
-			20
+                {{{getDate time}}}
 			</div>
 			<div class="month">
-			FEB
+                {{{getMonth time}}}
 			</div>
 			</div>
 			</div>
@@ -99,8 +102,8 @@
 	<div class="archySessionLayer">
 	</div>
 	<div class="archySessionTitle tobeScaledUp single">
-	<span> <img src="imaginary/astronaut.png"> </span>
-	<span>about the SG team </span>
+        <span> <img src="imaginary/astronaut.png"> </span>
+        <span>about the {{getEnv 'region'}} team </span>
 	</div><span class="triggerScaledUp single"> </span>
 </div>
 <div class="archySessionWhite wordsWordsWords">
@@ -117,39 +120,16 @@
 </div>
 <div class="archySessionDark">
 	<div class="people">
+        {{# each data.people}}
 		<div class="person">
 		<div class="imgWrap">
-		<img src="imaginary/martin.jpg">
+            <img src="{{{cloudinaryUrl image false webimage}}}">
 		</div>
-		<div class="info">Martin Ekluen
+        <div class="info">{{name}}
 			<div class="dividerL"></div><div class="dividerR"></div>
 		</div>
 		</div>
-		<div class="person">
-		<div class="imgWrap">
-		<img src="imaginary/melvin.jpg">
-		</div>
-		<div class="info">Melvin Zhang Ph.D.
-			<div class="dividerL"></div><div class="dividerR"></div>
-		</div>
-		</div>
-		<div class="person">
-		<div class="imgWrap">
-		<img src="imaginary/roland.jpg">
-		</div>
-		<div class="info">Roland Turner
-			<div class="dividerL"></div><div class="dividerR"></div>
-		</div>
-		</div>
-		<div class="person">
-		<div class="imgWrap">
-		<img src="imaginary/michal.jpg">
-		</div>
-		<div class="info">Michał Gajda
-			<div class="dividerL"></div><div class="dividerR"></div>
-		</div>
-		</div>
-		
+        {{/each}}        
 	</div>
 </div>
 <div class="joinTheTeam wordsWordsWords">

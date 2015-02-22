@@ -155,6 +155,26 @@ module.exports = function() {
 	        return options.fn(this);
 	    }
 	};
+    
+    _helpers.ifBlankThenNext = function(a,b){
+        if(a==="" | a===undefined){
+            return b;
+        }
+        console.log(a);
+        return a;
+    }
+
+    _helpers.getDate = function(time){
+        return moment(time).format('DD');
+
+    };
+    _helpers.getMonth = function(time){
+        return moment(time).format('MMM');
+    };
+
+    _helpers.getEnv = function(string){
+        return process.env[string]
+    }
 	
 	// ### CloudinaryUrl Helper
 	// Direct support of the cloudinary.url method from Handlebars (see
@@ -166,7 +186,7 @@ module.exports = function() {
 	//
 	// Returns an src-string for a cloudinary image
 	
-	_helpers.cloudinaryUrl = function(context, options) {
+	_helpers.cloudinaryUrl = function(context, options, default_string) {
 
 		// if we dont pass in a context and just kwargs
 		// then `this` refers to our default scope block and kwargs
@@ -186,7 +206,7 @@ module.exports = function() {
 			return cloudinary.url(imageName, options.hash);
 		}
 		else {
-			return null;
+			return default_string
 		}		
 	};
 	

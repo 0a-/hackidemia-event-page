@@ -53,7 +53,8 @@ $(function(){
         for(key in regions){
             regions[key].obtainEnterSt();
         }
-        $(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
+        $(".backgroundThatMoves").height(bh);
+        //$(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
     }
     function domEffects(){
         //disable any kind of body scroll before window.load.
@@ -64,6 +65,7 @@ $(function(){
         });
         $(".robotImage").load(function(){
             $(this).addClass("ScaledUp");
+            $(".robotWordBelow").addClass("ScaledUp");
         }).each(function(){
             if(this.complete){
                 $(this).trigger('load');
@@ -110,8 +112,8 @@ $(function(){
     }).resize(init);
     $(document).on("scroll",function(){
         var st = $(document).scrollTop();
-        $(".background_that_fades").css("opacity",1-0.8*(st/500));
-        $(".backgroundThatMoves").css("margin-top",st*-0.3);
+        //$(".background_that_fades").css("opacity",1-0.8*(st/500));
+        //$(".backgroundThatMoves").css("margin-top",st*-0.3);
         if($window_loaded){
             var passed = domScrolledEffects(st);
             while(passed){

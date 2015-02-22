@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>HacKIDemia SG</title>
+        <title>HacKIDemia {{getEnv 'region'}}</title>
 		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 	    <link rel='stylesheet' href='/styled/style.css' />
 	    <link rel='stylesheet' href='/styled/{{this.section}}.css' />
@@ -24,7 +24,11 @@
 			<span><a class="toWorkshops">workshops/events</a></span>
 			<span><a class="toAbout">about</a></span>
 			{{!-- <span><a href="/blog">blog</a></span> --}}
-			<span><img src="imaginary/facebook.png"> <img src="imaginary/twitter_bird.png"></span>
+
+            <span>
+                <a href=" {{getEnv 'fb'}} ">  <img src="imaginary/facebook.png"></a> 
+                <a href="https://twitter.com/hackidemia"><img src="imaginary/twitter_bird.png"></a>
+            </span>
 			</div>
 		</div>
 		<div class="archySession archyStyle archyFooter">
@@ -33,10 +37,10 @@
 			<div class="archySessionTitle">
 			<div class="archyFooter">
 			<div class="inline-block margin-right-80">
-			<p>Contact us at<br>sg@hackidemia.com</p>
+                <p>Contact us at<br>{{getEnv 'contact'}}@hackidemia.com</p>
 
 			</div>
-			<div class="text-right inline-block"><p>SG.hacKIDemia.com is proudly<br>handcrafted by <a href="https://github.com/0a-">Archy</a> with love.</p><a href="https://github.com/0a-/hackidemia-singapore">View the source code on Github</a>. 
+            <div class="text-right inline-block"><p>{{getEnv 'subdomain'}}.hacKIDemia.com is <br>handcrafted by <a href="http//:0a.io">Archy</a> with love.</p><a href="https://github.com/0a-/hackidemia-event-site/">View the source code on Github</a>. 
 			</div>
 			</div>
 			</div>
