@@ -13,7 +13,8 @@ if(process.env.CLOUDINARY_URL){
         github: {type: String, required: false},
         website: {type: String, required: false},
         linkin: {type: String, required: false},
-        image: { type: Types.CloudinaryImage }
+        image: { type: Types.CloudinaryImage, required: false },
+        webimage: {type: String, required: false}
     });
 
     Person.defaultColumns = 'name';

@@ -49,6 +49,8 @@ User.model.findOne({},function(err,user){
 
     if(!user){ 
     require("./data_seeding.js")();
+    require("./default_data_seeding.js")();
+
     }
  
 });
