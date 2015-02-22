@@ -71,11 +71,12 @@ $(function(){
                 $(this).trigger('load');
             }
         });
-        $(".joinTheTeam h4").hover(function(){
-            $(".joinTheTeamButtonBackground").css("height","100%");
+        $("h4").hover(function(){
+           $(this).children(".AwesomeButtonBackground").css("height","100%");
         },function(){
-             $(".joinTheTeamButtonBackground").css("height","0%");
+           $(this).children(".AwesomeButtonBackground").css("height","0%");
         });
+
         captureRegions("ScaledUp");
         captureRegions("SprangOut");
         regions.sort(function(a,b){return(a.px - b.px)});
