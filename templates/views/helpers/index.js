@@ -165,13 +165,27 @@ module.exports = function() {
     }
 
     _helpers.getDate = function(time){
-        return moment(time).format('DD');
+        if(time!==undefined){
+            return moment(time).format('DD');
+        }else{
+            return "TO";
+        }
 
     };
     _helpers.getMonth = function(time){
-        return moment(time).format('MMM');
+        if(time!==undefined){
+            return moment(time).format('MMM');
+        }else{
+            return "be determined";
+        }
     };
-
+    _helpers.getTime = function(time){
+        if(time!==undefined){
+            return moment(time).format('h:mm a');
+        }else{
+            return "TBD";
+        }
+    }
     _helpers.getEnv = function(string){
         return process.env[string]
     }
