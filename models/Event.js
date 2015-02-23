@@ -6,13 +6,10 @@ var keystone = require('keystone'),
  * ==========
  */
 
-var Event = new keystone.List('Event', {
-    map: { name: 'title' },
-    autokey: { path: 'slug', from: 'title', unique: true }
-});
+var Event = new keystone.List('Event');
 
 Event.add({
-    title: { type: String, required: true },
+    title: { type: String, required: true, initial: true },
     front_description1: { type: Types.Html, height: 200 },
     front_description2: { type: Types.Html, height: 300 },
     venue: {type: String},
@@ -20,9 +17,6 @@ Event.add({
     time: { type: Types.Datetime }
 });
 
-Event.schema.virtual('content.full').get(function() {
-    return this.content.extended || this.content.brief;
-});
 
 Event.defaultColumns = 'title, author|20%, publishedDate|20%';
 Event.register();

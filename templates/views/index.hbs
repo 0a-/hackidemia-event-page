@@ -17,8 +17,7 @@
 	  <div class="rect5"></div>
 	</div>
 	<div class="quoteAtHead tobeSprangOut SprangOutAfterLoad">
-	“Tell me and I forget. Teach me and I remember.<br> 
-	Involve me and I learn.”  - Benjamine Franklin
+    {{{getSection data.sections "quote"}}}
 	</div>
 	</div>
 	</div>
@@ -103,13 +102,15 @@
 <div class="archySessionWhite wordsWordsWords">
 	<div class="tobeSprangOut single">
 	<h1>
-	Technology is advancing <br> at an exponential rate.
-	</h1>
+	 {{{getSection data.sections "about HacKIDemia header"}}}
+    </h1>
 	<h2>
-	HacKIDemia is a non-profit organization that encourages, inspires and guides <br>the next generations of young people to change the world with technology.
-	</h2>
+	 {{{getSection data.sections "about HacKIDemia words"}}}
+    </h2>
 	<h3>
-	<a href="http://hackidemia.com">check out HacKIDemia's main website</a>
+	<a href="http://hackidemia.com">
+     {{{getSection data.sections "about HacKIDemia link"}}}
+    </a>
 	<div class="triggerSprangOut single"> </div>
 	</h3>
 	</div>
@@ -125,11 +126,11 @@
 <div class="archySessionWhite wordsWordsWords">
 	<div class="tobeSprangOut single">
 	<h1>
-	The Maker Movement is important<br>to Singapore's future.
-	</h1>
+	 {{{getSection data.sections "about the team header"}}}
+    </h1>
 	<h2>
-	Our mission is to teach and inspire young people in Singapore to<br> hack their way through life & build things of their imagination.
-	<div class="triggerSprangOut single"> </div>
+    {{{getSection data.sections "about the team words"}}}
+        <div class="triggerSprangOut single"> </div>
 	</h2>
 	</h2>
 	</div>
@@ -196,15 +197,15 @@
 </div>
 <div class="joinTheTeam wordsWordsWords">
 <div class="tobeSprangOut single">
-<h1>Want to be part of the team?</h1>
+<h1> {{{getSection data.sections "join us header"}}}</h1>
 <h2>
-Awesome! We are looking for more mentors & organisers too.
+	 {{{getSection data.sections "join us words"}}}
 </h2>
 <a href="mailto:{{getEnv contact}}.hackidemia.com"><h4>
 <div class="AwesomeButtonBackground"></div>
 <div>
-Join us now and let's make a difference in<br>
-the curent education in SIngapore!<div class="triggerSprangOut single"> </div>
+ {{{getSection data.sections "join us button"}}}
+<div class="triggerSprangOut single"> </div>
 </div>
 </h4>
 </a>

@@ -156,13 +156,6 @@ module.exports = function() {
 	    }
 	};
     
-    _helpers.ifBlankThenNext = function(a,b){
-        if(a==="" | a===undefined){
-            return b;
-        }
-        console.log(a);
-        return a;
-    }
 
     _helpers.getDate = function(time){
         if(time!==undefined){
@@ -188,6 +181,17 @@ module.exports = function() {
     }
     _helpers.getEnv = function(string){
         return process.env[string]
+    }
+
+    _helpers.getSection = function(array,name){
+        var a =0;
+        while(a<array.length){
+            if(array[a].title == name){
+                return array[a].words;
+            }
+            a++;
+        }
+        return "";
     }
 	
 	// ### CloudinaryUrl Helper

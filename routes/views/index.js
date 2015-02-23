@@ -21,10 +21,20 @@ exports = module.exports = function(req, res) {
 	    .exec(function(err, data) {
          locals.data.events = data;
          counter++;
-         if(counter===2){
+         if(counter===3){
 	       next(err);
          }
 	    });
+    
+		keystone.list("Section").model.find()
+	    .exec(function(err, data) {
+         locals.data.sections = data;
+         counter++;
+         if(counter===3){
+	       next(err);
+         }
+	    });
+
 
     	keystone.list("Person").model.find()
 	    .sort('-time')
@@ -32,7 +42,7 @@ exports = module.exports = function(req, res) {
            console.log(data);
 	       locals.data.people = data;
 	       counter++;
-           if(counter===2){
+           if(counter===3){
 	         next(err);
            }
 	    });
