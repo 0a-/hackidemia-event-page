@@ -39,6 +39,7 @@ exports = module.exports = function(app) {
 	if(process.env.inited){
 		app.get('/', routes.views.index);
 	}else{
+        app.get('/', routes.views.preinit);
 		app.get('/init', routes.views.init);
 	}
 
