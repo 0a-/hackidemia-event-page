@@ -170,11 +170,12 @@ He's been doing it since the age of 13.
 div,h1,h2,h3,h4{
 	position: relative;
 }
-body{
-	overflow: hidden;
+html{
+  font-size: 16px;
 }
 body {
-  font: 14px Times;
+   background: url("//static.squarespace.com/static/5134b5dee4b0c6fb04df399f/t/52991611e4b01a756858776d/1385764369922/hackidemia-banner-pattern.jpg");
+   font-size: 1em;
 }
 a{
 	color:inherit;
@@ -199,10 +200,10 @@ h1,h2,h3{
 	font-weight: normal;
 }
 h2{
-	font-size: 23px;
+	font-size: 1.43em;
 }
 h3{
-	font-size: 19px;
+	font-size: 1.18em;
 	color:#404cff;
 	a{
 		border-bottom: 2px solid transparent;
@@ -216,16 +217,15 @@ h3{
 	}
 }
 h4{
-	font-size: 18px;
+	font-size: 1.12em;
 	border: 4px solid #fff;
 	display: table;
-	margin:0 auto;
-	
+	margin:0 auto;	
 	padding:20px
 }
 h1{
 	font-weight: 800;
-	font-size: 40px;
+	font-size: 2.5em;
 }
 .wordsWordsWords{
 	font-family: "Montserrat";
@@ -297,15 +297,14 @@ h1{
         .robotWordBelow{
             font-family: "Dilem Handwritten";
             text-align:right;
-            font-size: 26px;
+            font-size: 1.625em;
             position: relative;
-            right: 15px;
-            width: 370px;
+            right: 12px;
             margin:0 auto
         }
 		.quoteAtHead{
 			text-align: center;
-			font-size: 22px;
+			font-size: 1.3em;
 			font-family: Times;
 			padding: 40px 0;
 		}
@@ -315,7 +314,7 @@ h1{
 .archyTop{
 	color:#fff;
 	font-family: "Dilem Handwritten";
-	font-size: 24px;
+	font-size: 1.5em;
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -343,7 +342,7 @@ h1{
 		position: relative;
 		margin:0 auto;
 		display: table;
-		font-size: 35px;
+		font-size: 2.18em;
 		text-rendering: optimizeLegibility !important;
 		-webkit-font-smoothing: antialiased !important;
 		background-color: #fff;
@@ -455,6 +454,22 @@ h1{
 		.back{
 			background-color: #FF5B40;
 		}
+        h4:hover{
+		    color:darken(#FF5B40, 10%);
+	    }
+        .front{
+            h4{
+                color:#FF5B40;
+                border-color:#FF5B40;
+            }  
+            h4:hover{
+		    color:#fff;
+	        }
+        }
+        .AwesomeButtonBackground{
+            background-color:#FF5B40;
+        }
+
 	}
 	.event1{
 		background-color: #1f1f1f;
@@ -467,6 +482,22 @@ h1{
 		.back{
 			background-color: #FF832F;
 		}
+        h4:hover{
+		    color:darken(#FF832F, 10%);
+	    }
+        .front{
+            h4{
+                color:#FF832F;
+                border-color:#FF832F;
+            }  
+            h4:hover{
+		    color:#fff;
+	        }
+        }
+        .AwesomeButtonBackground{
+            background-color:#FF832F;
+        }
+
 	}
 	.event2{
 		background-color: #2a2a2a;
@@ -479,18 +510,29 @@ h1{
 		.back{
 			background-color: #f8c12a
 		}
+        h4:hover{
+		    color:darken(#f8c12a, 10%);
+	    }
+        .front{
+            h4{
+                color:#f8c12a;
+                border-color:#f8c12a;
+            }  
+            h4:hover{
+		    color:#fff;
+	        }
+        }
+        .AwesomeButtonBackground{
+            background-color:#f8c12a;
+        }
 	}
 	.archyEventWrapper{
 		position: relative;
-		padding-bottom: 80%;
-		@media (min-width: 768px){
-			padding-bottom: 120%;
-		}
 	}
 	.archyEvent{
-		position: absolute;
-		top: 0;
-		left: 0;
+		//position: absolute;
+		//top: 0;
+		//left: 0;
 		width: 100%;
 		height: 100%;
 		//width: 248px;
@@ -501,11 +543,12 @@ h1{
 			text-align: center;
 			font-family: 'Raleway', sans-serif;
 			padding: 20px 0;
+            font-size: 70px;
 			.day{
-				font-size: 70px;
+				font-size: 1em;
 			}
 			.month{
-				font-size: 34px;
+				font-size: 0.485em;
 			}
 		}
 		.details,.front,.back{
@@ -513,6 +556,7 @@ h1{
 			height: 100%;
 		}
 		.detailsContainer{
+            height:400px;
 			webkit-perspective: 1000;
 			-moz-perspective: 1000;
 			-ms-perspective: 1000;
@@ -596,7 +640,7 @@ h1{
 		.info{
 			padding:50px 0;
 			text-align: center;
-			font-size: 21px;
+			font-size: 1.31em;
 			background-color:#f1f1f1;
 			position: relative;
 			.dividerR{
@@ -653,4 +697,339 @@ h1{
 }
 #sessions{
 	overflow: scroll;
+}
+
+.shortDescriptionWrapper{
+    padding:40px;
+    .shortDescription{
+        font-family: "Montserrat";
+        h1{
+            font-size: 1.56em;
+            line-height: 30px;
+            text-align:left;
+        }
+        h2{
+            font-size: 1.25em;
+            text-align:left;
+        }
+    }
+}
+.social{
+    width:100%;
+    overflow:hidden;
+}
+.social,.social_block{
+    height:65px;
+    line-height:65px;   
+}
+.social_block{
+    float: left;
+    text-align: center;
+
+    i{
+        vertical-align: middle;
+        color:#fff;
+        font-size:1.25em
+    }
+}
+.facebook{
+    background-color:#3b5998
+}
+.website{
+    background-color:#111
+}
+.linkin{
+    background-color:#007bb6
+}
+.github{
+    background-color:#666
+}
+.gplus{
+    background-color:#dd4b39
+}
+.twitter{
+    background-color:#00aced
+}
+
+.back{
+    font-family: "Montserrat";
+    color:#fff;
+    h1,h2{
+    display:inline;
+    padding-bottom:0px
+    }
+    h1{
+      padding-right:10px
+    }
+    .interestedButton{
+        position:absolute;
+        bottom:50px;
+        width:100%
+    }
+}
+.front{
+    font-family: "Montserrat";
+    .interestedButton{
+        position:absolute;
+        bottom:25px;
+        width:100%;
+        display:none
+    }
+}
+.toAbout,.toWorkshops{
+    cursor:pointer
+}
+
+
+//responsiveness
+
+@media screen and (max-width: 1000px) {
+   .front .interestedButton{
+        display:block; 
+   }
+    .threeIn1{
+        width:100%;
+        float:none
+    }
+    .detailsContainer:hover .details, .detailsContainer.hover .details {
+		transform: none !important;
+	}
+
+    body{
+        font-size:0.8em
+    }
+    .navImage{
+        height:15px;
+    }
+    .wordsWordsWords{
+        padding: 100px 0
+    }
+    .archyEvents .archyEvent .detailsContainer{
+        height: 300px
+    }
+    .robotImage{
+        width:320px;
+    }
+    .archyHeader .archyHeadMid .robotHead{
+        height:333px;  width:320px;
+    }
+    .archyEvents .archyEvent .date {
+        font-size:40px
+    }
+
+    .archySession{
+        padding: 60px 0;
+        .archySessionTitle{
+            padding: 40px;
+            img{
+                width: 50px
+            }
+        }
+    }
+
+    h1,h2,h3{
+        padding-bottom:30px
+    }
+    h4{
+        padding:20px;
+    }
+
+    .shortDescriptionWrapper .shortDescription{
+        h1{
+            font-size:29px;
+            line-height:35px;
+        }
+        h2{
+            font-size:19px;
+        }
+    }
+
+}
+@media screen and (max-width: 780px) {
+   .archySession .archySessionTitle .archyFooter{
+       font-size:12px
+   }
+   .margin-right-80{
+        margin-right:40px;
+   }
+    body{
+        font-size:0.65em
+    }
+    .navImage{
+        height:12px;
+    }
+     .wordsWordsWords{
+        padding: 80px 0
+    }
+    .archyHeader .archyHeadMid .quoteAtHead{
+        padding: 30px 0
+    } 
+      .archyEvents .archyEvent .detailsContainer{
+        height: 270px;
+    }
+    .robotImage{
+        width:280px;
+    }
+    .archyHeader .archyHeadMid .robotHead{
+        height:283px; width:280px;
+    }
+    .archyEvents .archyEvent .date {
+        font-size:30px
+    }
+
+    .archySession{
+        padding: 50px 0;
+        .archySessionTitle{
+            padding: 30px;
+            img{
+                width: 40px
+            }
+        }
+    }
+
+    h1,h2,h3{
+        padding-bottom:23px
+    }
+    h4{
+        padding:15px;
+    }
+
+
+    .shortDescriptionWrapper .shortDescription{
+        h1{
+            font-size:25px;
+            line-height:30px;
+        }
+        h2{
+            font-size:17px;
+        }
+    }
+
+
+
+}
+@media screen and (max-width: 590px) { 
+   .archySession .archySessionTitle .archyFooter{
+       font-size:10px
+   }
+   .margin-right-80{
+        margin-right:30px;
+   }
+
+    body{
+        font-size:0.5em
+    }
+    .navImage{
+        height:9px
+    }
+     .wordsWordsWords{
+        padding: 50px 0
+    }
+    .archyHeader .archyHeadMid .quoteAtHead{
+        padding: 21px 0
+    }
+    .archyEvents .archyEvent .detailsContainer{
+        height: 250px
+    }
+    .robotImage{
+        width:240px;    
+    }
+    .archyHeader .archyHeadMid .robotHead{
+        height:243px; width:240px;
+    }
+    .archyEvents .archyEvent .date {
+        font-size:25px
+    }
+
+    .archySession{
+        padding: 40px 0;
+        .archySessionTitle{
+            padding: 25px;
+            img{
+                width: 30px
+            }
+        }
+    }
+   h1,h2,h3{
+        padding-bottom:18px
+    }
+    h4{
+        padding:15px;
+    }
+
+
+    
+    .shortDescriptionWrapper .shortDescription{
+        h1{
+            font-size:22px;
+            line-height:28px;
+        }
+        h2{
+            font-size:14px;
+        }
+    }
+
+
+
+}
+@media screen and (max-width: 470px) { 
+       .archySession .archySessionTitle .archyFooter{
+       font-size:9px
+   }
+   .margin-right-80{
+        margin-right:17px;
+   }
+    body{
+        font-size:0.43em
+    }
+    .navImage{
+        height:7px
+    }
+     .wordsWordsWords{
+        //padding: 30px 0
+    }
+    .archyHeader .archyHeadMid .quoteAtHead{
+        padding: 15px 0
+    }
+    .archyEvents .archyEvent .detailsContainer{
+        height: 230px
+    }
+    .robotImage{
+        width:200px;
+    }
+    .archyHeader .archyHeadMid .robotHead{
+        height:213px;  width:200px;
+    }
+    .archyEvents .archyEvent .date {
+        font-size:22px
+    }
+
+    .archySession{
+        padding: 30px 0;
+        .archySessionTitle{
+            padding: 18px;
+            img{
+                width: 23px
+            }
+        }
+    }
+    h1,h2,h3{
+        padding-bottom:14px
+    }
+    h4{
+        padding:12px;
+    }
+    .shortDescriptionWrapper .shortDescription{
+        h1{
+            font-size:15px;
+            line-height:20px;
+        }
+        h2{
+            font-size:11px;
+        }
+    }
+    .people .person .info{
+        font-size:2.1em
+    }
+
 }

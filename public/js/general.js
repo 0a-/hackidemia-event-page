@@ -47,13 +47,13 @@ $(function(){
         });
     }
     function init(){
-        $(".detailsContainer").height($(".archyEvent").outerHeight()-$(".date").outerHeight());
-        bh = $body.height();
+        //$(".detailsContainer").height($(".archyEvent").outerHeight()-$(".date").outerHeight());
+        //bh = $body.height();
         wh = $window.height();
         for(key in regions){
             regions[key].obtainEnterSt();
         }
-        $(".backgroundThatMoves").height(bh);
+        //$(".backgroundThatMoves").height(bh);
         //$(".backgroundThatMoves").height(bh+(bh-wh)*0.3);
     }
     function domEffects(){

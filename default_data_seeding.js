@@ -2,7 +2,7 @@ module.exports =function(){ var keystone = require('keystone'), Event = keystone
     
 var events = [
 { front_description1: "Building your own MIDI controller & mashing up music at home: the code",
-  front_description2: "A meet-up/workshop designed for any would-be hacker. <i>It is alright if you do not yet know how to code. This is for anyone who is interested in coding.</i>",
+  front_description2: "A meet-up/workshop designed for any would-be hacker. (It is alright if you do not yet know how to code. This is for anyone who is interested in coding.)",
   title: "MIDI: the code",
   venue: "The only white building on some planet in the Andromeda galaxy 2.5 million light-years away",
   facebook_url : "http://facebook.com/",
